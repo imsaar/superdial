@@ -16,6 +16,8 @@ void display_init() {
 
 uint16_t hsv_to_rgb565(float h, float s, float v) {
     float r, g, b;
+    h = fmodf(h, 1.0f);
+    if (h < 0.0f) h += 1.0f;
     int i = (int)(h * 6.0f);
     float f = h * 6.0f - i;
     float p = v * (1.0f - s);
@@ -33,7 +35,7 @@ uint16_t hsv_to_rgb565(float h, float s, float v) {
     return tft.color565((uint8_t)(r * 255), (uint8_t)(g * 255), (uint8_t)(b * 255));
 }
 
-void draw_ring_arc(TFT_eSprite& spr, int cx, int cy, int r, int thickness,
+void draw_ring_arc(TFT_eSprite& sprite, int cx, int cy, int r, int thickness,
                    float start_deg, float end_deg, uint16_t color) {
     float step = 0.8f; // degrees per dot — smoother than 1° for large radii
     int dot_r = max(1, thickness / 2);
@@ -43,6 +45,6 @@ void draw_ring_arc(TFT_eSprite& spr, int cx, int cy, int r, int thickness,
         float rad = (a - 90.0f) * DEG_TO_RAD;
         int x = cx + (int)(cosf(rad) * r);
         int y = cy + (int)(sinf(rad) * r);
-        spr.fillCircle(x, y, dot_r, color);
+        sprite.fillCircle(x, y, dot_r, color);
     }
 }

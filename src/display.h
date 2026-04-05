@@ -12,5 +12,7 @@ uint16_t hsv_to_rgb565(float h, float s, float v);
 // Draw a filled arc ring segment using filled circles along the arc path.
 // cx/cy: center, r: radius to center of ring, thickness: ring width in pixels,
 // start_deg/end_deg: clockwise from 12-o'clock (0°), color: RGB565
-void draw_ring_arc(TFT_eSprite& spr, int cx, int cy, int r, int thickness,
+// Note: start_deg must be <= end_deg. Wrapping arcs (e.g. 350°→10°) must be
+// split into two calls. Passing start_deg > end_deg draws nothing.
+void draw_ring_arc(TFT_eSprite& sprite, int cx, int cy, int r, int thickness,
                    float start_deg, float end_deg, uint16_t color);
