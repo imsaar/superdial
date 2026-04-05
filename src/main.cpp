@@ -31,7 +31,6 @@ void loop() {
     float t = (now - screen_start_ms) / 1000.0f;
 
     screens[active_screen].update(t);
-    spr.fillSprite(TFT_BLACK);
     screens[active_screen].draw(spr);
     spr.pushSprite(0, 0);
 }

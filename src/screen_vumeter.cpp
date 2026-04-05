@@ -1,5 +1,6 @@
 #include "screens.h"
 #include "display.h"
+#include <Arduino.h>
 #include <math.h>
 
 static const int NUM_BARS = 20;

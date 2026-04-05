@@ -11,6 +11,7 @@ static int    _data[4]     = {421, 87, 1024, 33};
 static float  _next_tick   = 0.0f;
 
 void screen_hud_update(float t) {
+    if (t < _next_tick - 3.0f) _next_tick = 0.0f; // detect re-entry (t reset to 0)
     _outer_angle =  t * 18.0f;  // 18 deg/sec clockwise
     _inner_angle = -t * 30.0f;  // 30 deg/sec counter-clockwise
     _pulse       = 0.5f + 0.5f * sinf(t * 6.0f);
