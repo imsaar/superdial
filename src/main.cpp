@@ -7,8 +7,9 @@ Screen screens[] = {
     { screen_speedometer_update, screen_speedometer_draw, "Speedometer" },
     { screen_rainbow_update,     screen_rainbow_draw,     "Rainbow"     },
     { screen_neon_update,        screen_neon_draw,        "Neon"        },
+    { screen_hud_update,         screen_hud_draw,         "HUD"         },
 };
-const int SCREEN_COUNT = 4;
+const int SCREEN_COUNT = 5;
 
 static uint32_t screen_start_ms = 0;
 static int active_screen = 0;
