@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "display.h"
+#include "screens.h"
 
 void setup() {
     display_init();
