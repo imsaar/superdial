@@ -69,7 +69,7 @@ superdial/
 │   ├── display.h / display.cpp # TFT + sprite init, HSV color helper, arc drawing utility
 │   ├── screens.h               # Screen struct interface, forward declarations
 │   ├── screen_clock.cpp        # Screen 1: Analog clock
-│   ├���─ screen_speedometer.cpp  # Screen 2: Speedometer
+│   ├── screen_speedometer.cpp  # Screen 2: Speedometer
 │   ├── screen_rainbow.cpp      # Screen 3: Rainbow arc gauge
 │   ├── screen_neon.cpp         # Screen 4: Neon concentric rings
 │   ├── screen_hud.cpp          # Screen 5: Sci-fi HUD
